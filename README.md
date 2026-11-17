@@ -139,7 +139,7 @@ ollama pull nomic-embed-text
 ### 3. Setup Virtual Environment
 ```bash
 # Clone or navigate to the project directory
-cd z
+cd Edu_Path-AI_Tutor-main
 
 # Create and activate virtual environment
 python -m venv .venv
