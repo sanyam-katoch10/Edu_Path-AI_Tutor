@@ -1,0 +1,179 @@
+{
+  "modules": {
+    "Foundations, expressions, and equation modeling": [
+      {
+        "index": 0,
+        "heading": "1.1.1 Understanding Value",
+        "module": "Foundations, expressions, and equation modeling",
+        "content": "Variables are letters used to represent quantities. An equation connects quantities by stating that two expressions have the same value. To interpret an equation, identify what each variable represents, then describe the relationship in words. For example, if m is the cost of a main dish, s is the cost of a side dish, n is the number of side dishes, and t is the total meal cost, then m + ns = t represents the main-dish cost plus the combined cost of the side dishes. Distinguish a variable from a fixed value and translate each part of an expression into the situation it describes.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/1-1-1-understanding-value"
+      },
+      {
+        "index": 1,
+        "heading": "1.2.3 Writing Equations to Represent Relationships",
+        "module": "Foundations, expressions, and equation modeling",
+        "content": "To model a relationship, identify the quantities, assign a variable to each unknown, describe the relationship in words, and translate the statement into an equation. Multiplication can represent a unit rate multiplied by a quantity, such as cost per pound times pounds purchased equaling total cost. Addition or subtraction can represent comparisons between quantities, such as one person's earnings being a fixed amount more than another's. Check that the variables and operations match the meaning of the situation, not just the numbers in the sentence.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/1-2-3-writing-equations-to-represent-relationships"
+      },
+      {
+        "index": 2,
+        "heading": "1.4.2 Writing Equations to Represent Constraints",
+        "module": "Foundations, expressions, and equation modeling",
+        "content": "A constraint is a condition that limits the possible values in a situation. Build an equation by identifying the variable, the rate or fixed amount, and any cost or quantity that must be accounted for. For example, take-home earnings can be modeled as hourly pay multiplied by hours worked, minus a fixed travel cost. A proposed value is a solution only when substituting it into the equation makes the statement true. Use substitution to test a candidate value, and solve the equation when the candidate does not satisfy the constraint.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/1-4-2-writing-equations-to-represent-constraints"
+      },
+      {
+        "index": 3,
+        "heading": "1.5.3 Examining an Equation in Two Variables and Its Graph, Part 1",
+        "module": "Foundations, expressions, and equation modeling",
+        "content": "An equation with two variables can describe a relationship between two changing quantities. First state what each variable represents, then use the context to form the equation. A pair of values is a solution when substituting both values makes the equation true. A graph can show many pairs that satisfy the same equation; each plotted point represents one possible pair. When one equation contains two variables, it commonly describes a relationship rather than a single numerical value for each variable.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/1-5-3-examining-an-equation-in-two-variables-and-its-graph-part-1"
+      }
+    ],
+    "Linear equations and solution behaviour": [
+      {
+        "index": 4,
+        "heading": "1.6.2 Expressing Relationships as Equations",
+        "module": "Linear equations and solution behaviour",
+        "content": "Equivalent equations have the same solution set. A new equation can be formed by applying the same valid operation to both sides, such as adding or subtracting the same value, or multiplying or dividing both sides by the same nonzero value. These transformations can simplify an equation without changing its solutions. For example, subtracting a constant can isolate a variable term, and dividing by a nonzero coefficient can make the variable's coefficient equal to one. Check that every transformation is applied consistently to both sides.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/1-6-2-expressing-relationships-as-equations"
+      },
+      {
+        "index": 5,
+        "heading": "1.6.3 Exploring Related Equations",
+        "module": "Linear equations and solution behaviour",
+        "content": "The properties of equality allow the same quantity to be added to, subtracted from, multiplied by, or divided into both sides of an equation; division requires a nonzero divisor. Inverse operations undo one another. To isolate a variable, reverse the operations applied to it while maintaining equality on both sides. An equation and a correctly transformed equivalent equation have the same solution. Verify a proposed solution by substituting it into the original equation and checking whether the statement is true.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/1-6-3-exploring-related-equations"
+      },
+      {
+        "index": 6,
+        "heading": "Solve Linear Equations - Mini-Lesson Review",
+        "module": "Linear equations and solution behaviour",
+        "content": "A general method for solving a linear equation in one variable is to simplify each side first, use the distributive property when needed, and combine like terms. Then collect variable terms on one side and constants on the other using addition or subtraction properties of equality. Make the variable's coefficient equal to one, state the solution, and substitute it into the original equation to verify it. Not every problem needs every step, but the sequence provides a useful checklist for multi-step equations and equations with variables on both sides.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/1-solve-linear-equations-mini-lesson-review"
+      },
+      {
+        "index": 7,
+        "heading": "1.7.1 Determining if Zero Is a Solution",
+        "module": "Linear equations and solution behaviour",
+        "content": "To determine whether zero is a solution, substitute 0 for the variable everywhere it appears and simplify both sides. If the resulting statement is true, zero is a solution; if it is false, zero is not a solution. Also check whether substitution creates an undefined operation. In particular, division by zero is undefined, so a value that makes a denominator zero cannot be accepted as a solution. The same substitution method works for testing any proposed solution, not only zero.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/1-7-1-determining-if-zero-is-a-solution"
+      },
+      {
+        "index": 8,
+        "heading": "1.7.3 Understanding Equations with No Solution or Infinitely Many",
+        "module": "Linear equations and solution behaviour",
+        "content": "Simplify an equation using valid equivalent operations, such as the commutative property, combining like terms, and applying the same operation to both sides. If simplification produces a false statement such as 6 = 1, the original equation has no solution. If simplification produces an identity that is true for every allowed value, the equation has infinitely many solutions. The final simplified statement helps classify the equation; do not assume every linear-looking equation has exactly one solution.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/1-7-3-understanding-equations-with-no-solution-or-infinitely-many"
+      }
+    ],
+    "Systems of equations and inequalities": [
+      {
+        "index": 9,
+        "heading": "2.4.2 Adding Equations",
+        "module": "Systems of equations and inequalities",
+        "content": "The elimination method solves a system by adding or subtracting equations so that one variable cancels. Put equations in a compatible form, then inspect coefficients to find a variable whose coefficients are opposites or can be made opposites. Add the equations to eliminate that variable, solve the resulting one-variable equation, and substitute the value into an original equation to find the other variable. Verify the ordered pair in both original equations. If adding does not eliminate a variable, subtraction or an equivalent transformation may be more useful.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/2-4-2-adding-equations"
+      },
+      {
+        "index": 10,
+        "heading": "2.11.2 Finding Solutions to Inequalities on the Coordinate Plane",
+        "module": "Systems of equations and inequalities",
+        "content": "A two-variable inequality has a set of ordered pairs that make it true. Test candidate coordinate pairs by substituting their x- and y-values into the inequality. Graphing several solution and non-solution points helps reveal the region containing all solutions. A graph of an inequality represents a region, not just one point. Explain whether a point is a solution by evaluating the inequality, and connect the algebraic statement to the part of the coordinate plane that satisfies it.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/2-11-2-finding-solutions-to-inequalities-on-the-coordinate-plane"
+      },
+      {
+        "index": 11,
+        "heading": "2.14.2 Finding a Pair of Values that Satisfies Multiple Inequalities",
+        "module": "Systems of equations and inequalities",
+        "content": "A system of inequalities represents several constraints that must hold at the same time. Each inequality can be graphed as a region on the coordinate plane. A point satisfies the system only if it belongs to the solution region of every inequality. In a real-world problem, one inequality may represent a minimum quantity while another represents a maximum budget. The feasible solutions are the overlapping region that meets all constraints. Test a proposed pair in each inequality, not just one of them.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/2-14-2-finding-a-pair-of-values-that-satisfies-multiple-inequalities"
+      },
+      {
+        "index": 12,
+        "heading": "2.9.2 Graphing Inequalities",
+        "module": "Systems of equations and inequalities",
+        "content": "A one-variable inequality usually has a set of solutions rather than one single value. On a number line, use an open circle for a strict inequality (< or >), because the endpoint is excluded. Use a closed circle for an inclusive inequality (<= or >=), because the endpoint is included. Shade to the left for values below the endpoint and to the right for values above it. Interval notation is another way to describe the same set. A test value from the shaded region should make the original inequality true; a value outside it should not.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/2-9-2-graphing-inequalities"
+      },
+      {
+        "index": 13,
+        "heading": "2.10.5 Solving Inequalities",
+        "module": "Systems of equations and inequalities",
+        "content": "Solve a one-variable inequality by applying valid operations to both sides while preserving the relationship. Adding or subtracting the same quantity keeps the inequality direction. Multiplying or dividing both sides by a positive number also keeps the direction, while multiplying or dividing by a negative number reverses it. The reversal happens because multiplying reverses number order: for example, 2 < 5 becomes -2 > -5 after multiplying both sides by -1. After isolating the variable, express the complete solution set and verify it with a value that should satisfy the inequality. For example, 3x - 4 <= 8 gives 3x <= 12 and then x <= 4 because the final division is by positive 3.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/2-10-5-solving-inequalities"
+      }
+    ],
+    "Relations, functions, and linear models": [
+      {
+        "index": 14,
+        "heading": "4.1.3 Examining Relations and Functions",
+        "module": "Relations, functions, and linear models",
+        "content": "A relation is a set of ordered pairs. A function is a relation in which every input has exactly one output. To decide whether a relation is a function, check whether any input is paired with more than one output. Different inputs may share the same output; the restriction is that a single input cannot map to two different outputs. Relations can be represented with ordered pairs, tables, mappings, or graphs, and the same input-output rule should be consistent across representations.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/4-1-3-examining-relations-and-functions"
+      },
+      {
+        "index": 15,
+        "heading": "4.2.2 Interpreting Statements Written in Function Notation",
+        "module": "Relations, functions, and linear models",
+        "content": "Function notation names a function and indicates the input being used. In f(x), f identifies the function and x is the input; f(60), for example, means the output produced when the input is 60. It does not mean f multiplied by 60. Interpret a function statement by identifying the input quantity and reading the corresponding output from a rule, table, or graph. Keep the meaning and units of the input and output clear in context.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/4-2-2-interpreting-statements-written-in-function-notation"
+      },
+      {
+        "index": 16,
+        "heading": "4.7.2 Finding Slope From Tables, Graphs, and Points",
+        "module": "Relations, functions, and linear models",
+        "content": "Slope measures the rate of change of a linear function and describes the steepness and direction of a line. From two points, calculate the change in y divided by the change in x: m = (y2 - y1) / (x2 - x1), provided the x-values differ. From a table, compare the change in output with the corresponding change in input. A positive slope rises from left to right, a negative slope falls, and a zero slope is horizontal. A vertical line has undefined slope because the change in x is zero.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/4-7-2-finding-slope-from-tables-graphs-and-points"
+      },
+      {
+        "index": 17,
+        "heading": "4.7.3 Writing Linear Equations",
+        "module": "Relations, functions, and linear models",
+        "content": "A linear equation can be written in equivalent forms for different purposes. Slope-intercept form is y = mx + b, where m is the slope and b is the y-intercept. Point-slope form is y - y1 = m(x - x1), using a known point and slope. Standard form is Ax + By = C, conventionally arranged without fractions and with a nonnegative A coefficient. Choose the form that matches the information given, then substitute the known slope, intercept, or point carefully.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/4-7-3-writing-linear-equations"
+      }
+    ],
+    "Exponents and powers": [
+      {
+        "index": 18,
+        "heading": "5.1.2 Using Product and Quotient Properties for Exponents",
+        "module": "Exponents and powers",
+        "content": "For powers with the same base, multiplication adds exponents: a^m · a^n = a^(m+n). Division of like bases subtracts exponents when the base is nonzero: a^m / a^n = a^(m-n). If the denominator's exponent is larger, the result can be represented with a reciprocal and a positive exponent. These rules apply to like bases; do not add or subtract exponents when the bases differ. Check the nonzero-base condition before applying a quotient rule.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/5-1-2-using-product-and-quotient-properties-for-exponents"
+      },
+      {
+        "index": 19,
+        "heading": "5.1.3 Using Zero Exponent Property and Negative Exponents",
+        "module": "Exponents and powers",
+        "content": "For a nonzero base a, the zero-exponent property gives a^0 = 1. A negative exponent indicates a reciprocal: a^(-n) = 1 / a^n, where a is nonzero. The negative sign in an exponent does not by itself make the value negative. For example, a positive base raised to a negative exponent remains positive and becomes a reciprocal. Keep the nonzero-base condition in mind, and distinguish a negative exponent from a negative base.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/5-1-3-using-zero-exponent-property-and-negative-exponents"
+      },
+      {
+        "index": 20,
+        "heading": "5.1.4 Using Power Properties for Exponents",
+        "module": "Exponents and powers",
+        "content": "When a power is raised to another power, multiply the exponents: (a^m)^n = a^(mn). When a product is raised to a power, apply the exponent to each factor: (ab)^n = a^n b^n. A quotient raised to a negative power can be rewritten by taking the reciprocal and changing the exponent to positive, when the numerator and denominator are nonzero. Apply one rule at a time and preserve parentheses so the base is interpreted correctly.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/5-1-4-using-power-properties-for-exponents"
+      }
+    ],
+    "Polynomials and factoring": [
+      {
+        "index": 21,
+        "heading": "6.1.1 Understanding Polynomials",
+        "module": "Polynomials and factoring",
+        "content": "A monomial has one term, a binomial has two terms, and a trinomial has three terms. These are types of polynomials. A polynomial consists of one or more monomials combined by addition or subtraction. The degree of a polynomial is the greatest degree among its terms. To classify a polynomial, count its terms after simplifying; to determine its degree, examine the variable exponents in each term and identify the highest term degree.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/6-1-1-understanding-polynomials"
+      },
+      {
+        "index": 22,
+        "heading": "6.4.2 Finding the GCF of Two or More Expressions",
+        "module": "Polynomials and factoring",
+        "content": "To find the greatest common factor of algebraic expressions, factor each numerical coefficient into primes and expand variable powers into repeated factors. Identify the factors shared by every expression, using the smallest shared exponent for each variable. Multiply the common numerical and variable factors to form the GCF. For example, when expressions share a numerical factor and repeated variables, only the factors present in all expressions belong in the common factor. Factoring out the GCF is also a first step in rewriting a polynomial as a product.",
+        "openstax_url": "https://openstax.org/books/algebra-1/pages/6-4-2-finding-the-gcf-of-two-or-more-expressions"
+      }
+    ]
+  },
+  "total_sections": 23,
+  "total_modules": 6
+}

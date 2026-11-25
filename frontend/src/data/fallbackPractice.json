@@ -1,0 +1,115 @@
+{
+  "linear_equations": {
+    "Beginner": [
+      { "id": "le-b1", "question": "Solve 2x + 4 = 10. Find x.", "answer": 3, "answer_type": "numeric", "hint": "Subtract 4 from both sides, then divide by 2." },
+      { "id": "le-b2", "question": "Solve x - 7 = 9. Find x.", "answer": 16, "answer_type": "numeric", "hint": "Add 7 to both sides to undo subtracting 7." }
+    ],
+    "Intermediate": [
+      { "id": "le-i1", "question": "Solve 4x + 6 = 22. Find x.", "answer": 4, "answer_type": "numeric", "hint": "Subtract 6 from both sides, then divide by 4." },
+      { "id": "le-i2", "question": "Solve 3(x + 2) = 18. Find x.", "answer": 4, "answer_type": "numeric", "hint": "Divide both sides by 3, then subtract 2." }
+    ],
+    "Advanced": [
+      { "id": "le-a1", "question": "Solve 5x - 3 = 2x + 9. Find x.", "answer": 4, "answer_type": "numeric", "hint": "Collect variable terms on one side and constants on the other." },
+      { "id": "le-a2", "question": "Solve 7x + 4 = 3x + 20. Find x.", "answer": 4, "answer_type": "numeric", "hint": "Subtract 3x from both sides, then isolate x." }
+    ]
+  },
+  "multi_variable": {
+    "Beginner": [
+      { "id": "mv-b1", "question": "If y = 2x + 1 and x = 3, find y.", "answer": 7, "answer_type": "numeric", "hint": "Substitute 3 for x." }
+    ],
+    "Intermediate": [
+      { "id": "mv-i1", "question": "Given 10x + 5y = 13y - 14x and x = 2, find y.", "answer": 6, "answer_type": "numeric", "hint": "First simplify to a relationship between x and y, then substitute x = 2." }
+    ],
+    "Advanced": [
+      { "id": "mv-a1", "question": "Given 4x - 2y = 10x - 8y and x = 3, find y.", "answer": 3, "answer_type": "numeric", "hint": "Collect x-terms and y-terms, simplify, then substitute x = 3." }
+    ]
+  },
+  "equation_behavior": {
+    "Beginner": [
+      { "id": "eb-b1", "question": "How many solutions does 2x + 4 = 2x + 4 have? Answer: one, none, or infinitely many.", "answer": ["infinitely many", "infinitely many solutions", "infinite solutions", "all real numbers"], "answer_type": "text", "hint": "Subtract 2x from both sides. Is the remaining statement always true?" }
+    ],
+    "Intermediate": [
+      { "id": "eb-i1", "question": "How many solutions does 3x + 2 = 3x + 7 have? Answer: one, none, or infinitely many.", "answer": ["none", "no solution", "no solutions"], "answer_type": "text", "hint": "Subtract 3x from both sides and inspect the resulting number statement." }
+    ],
+    "Advanced": [
+      { "id": "eb-a1", "question": "Classify 4(x + 2) = 4x + 8 as one solution, no solution, or infinitely many solutions.", "answer": ["infinitely many", "infinitely many solutions", "infinite solutions", "all real numbers"], "answer_type": "text", "hint": "Expand the left side and simplify. Does the result depend on x?" }
+    ]
+  },
+  "systems": {
+    "Beginner": [
+      { "id": "sy-b1", "question": "For x + y = 8 and x - y = 2, find x.", "answer": 5, "answer_type": "numeric", "hint": "Add the two equations to eliminate y, then divide by 2." }
+    ],
+    "Intermediate": [
+      { "id": "sy-i1", "question": "For x + y = 15 and x - y = 3, find x.", "answer": 9, "answer_type": "numeric", "hint": "Add the equations to eliminate y." }
+    ],
+    "Advanced": [
+      { "id": "sy-a1", "question": "For 2x + 3y = 13 and x + y = 5, find x.", "answer": 2, "answer_type": "numeric", "hint": "Multiply the second equation by -3, add it to the first, and solve." }
+    ]
+  },
+  "inequalities": {
+    "Beginner": [
+      { "id": "in-b1", "question": "Solve x + 2 > 5. Give your answer using inequality notation.", "answer": ["x>3", "x> 3"], "answer_type": "text", "hint": "Subtract 2 from both sides. The inequality direction stays the same." }
+    ],
+    "Intermediate": [
+      { "id": "in-i1", "question": "Solve 3x - 4 <= 8. Give your answer using inequality notation.", "answer": ["x<=4", "x≤4", "x ≤ 4"], "answer_type": "text", "hint": "Add 4, then divide by positive 3. The direction stays the same." }
+    ],
+    "Advanced": [
+      { "id": "in-a1", "question": "Solve -2x + 6 > 10. Give your answer using inequality notation.", "answer": ["x<-2", "x < -2"], "answer_type": "text", "hint": "Subtract 6, then divide by -2. Remember to reverse the inequality sign." }
+    ]
+  },
+  "functions": {
+    "Beginner": [
+      { "id": "fn-b1", "question": "If f(x) = x + 2, find f(3).", "answer": 5, "answer_type": "numeric", "hint": "Replace x with 3 in the function rule." }
+    ],
+    "Intermediate": [
+      { "id": "fn-i1", "question": "If f(x) = 2x - 5, find f(4).", "answer": 3, "answer_type": "numeric", "hint": "Substitute 4 for x and evaluate." }
+    ],
+    "Advanced": [
+      { "id": "fn-a1", "question": "If f(x) = 3x^2 - 2, find f(-2).", "answer": 10, "answer_type": "numeric", "hint": "Substitute -2 for x. Square -2 before multiplying by 3." }
+    ]
+  },
+  "slope": {
+    "Beginner": [
+      { "id": "sl-b1", "question": "Find the slope of the line through (1, 2) and (3, 6).", "answer": 2, "answer_type": "numeric", "hint": "Slope is change in y divided by change in x." }
+    ],
+    "Intermediate": [
+      { "id": "sl-i1", "question": "Find the slope through (2, 5) and (5, 14).", "answer": 3, "answer_type": "numeric", "hint": "Calculate (14 - 5) / (5 - 2)." }
+    ],
+    "Advanced": [
+      { "id": "sl-a1", "question": "Rewrite 4x + 2y = 8 in slope-intercept form and give the slope as a number.", "answer": -2, "answer_type": "numeric", "hint": "Isolate y, then identify the coefficient of x." }
+    ]
+  },
+  "exponents": {
+    "Beginner": [
+      { "id": "ex-b1", "question": "Evaluate 2^3. Give the numerical answer.", "answer": 8, "answer_type": "numeric", "hint": "Multiply 2 by itself three times." }
+    ],
+    "Intermediate": [
+      { "id": "ex-i1", "question": "Evaluate 2^3 * 2^2. Give the numerical answer.", "answer": 32, "answer_type": "numeric", "hint": "For powers with the same base, add the exponents." }
+    ],
+    "Advanced": [
+      { "id": "ex-a1", "question": "Evaluate (3^2)^2 / 3^2. Give the numerical answer.", "answer": 9, "answer_type": "numeric", "hint": "Apply the power-of-a-power rule, then the quotient rule." }
+    ]
+  },
+  "polynomials": {
+    "Beginner": [
+      { "id": "po-b1", "question": "What is the degree of 4x^2 + 3x + 1? Give a number.", "answer": 2, "answer_type": "numeric", "hint": "The degree is the highest exponent of x." }
+    ],
+    "Intermediate": [
+      { "id": "po-i1", "question": "What is the degree of 5x^3 - 2x^5 + 1? Give a number.", "answer": 5, "answer_type": "numeric", "hint": "Find the largest exponent after identifying the terms." }
+    ],
+    "Advanced": [
+      { "id": "po-a1", "question": "What is the degree of (2x^3 + 1)(x^2 + 4)? Give a number.", "answer": 5, "answer_type": "numeric", "hint": "The degree of a product is the sum of the degrees of the factors." }
+    ]
+  },
+  "foundations": {
+    "Beginner": [
+      { "id": "fo-b1", "question": "Evaluate |-7| + 3. Give a number.", "answer": 10, "answer_type": "numeric", "hint": "The absolute value of -7 is positive 7." }
+    ],
+    "Intermediate": [
+      { "id": "fo-i1", "question": "Evaluate 18 - 3 * (4 + 1). Give a number.", "answer": 3, "answer_type": "numeric", "hint": "Follow PEMDAS: parentheses first, then multiplication, then subtraction." }
+    ],
+    "Advanced": [
+      { "id": "fo-a1", "question": "Simplify 2(3x - 4) - 5(x - 2) when x = 5. Find the value.", "answer": 7, "answer_type": "numeric", "hint": "Distribute each factor, combine like terms to x + 2, then substitute x = 5." }
+    ]
+  }
+}
