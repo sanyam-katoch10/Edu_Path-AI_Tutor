@@ -16,7 +16,6 @@
 - [Project Structure](#-project-structure)
 - [Prerequisites & Installation](#-prerequisites--installation)
 - [Running the 3D Web Application](#-running-the-immersive-3d-web-application)
-- [Production Deployment Guide](#-production-deployment-guide)
 - [Usage & Menu Options (CLI)](#-usage--menu-options-standalone-cli)
 - [Evaluation & Benchmark Results](#-evaluation--benchmark-results)
 - [Attribution & Academic Integrity](#-attribution--academic-integrity)
