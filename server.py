@@ -1,5 +1,3 @@
-"""EduPath FastAPI backend — thin wrapper around the existing app.py engine."""
-
 import uuid
 import io
 import re
