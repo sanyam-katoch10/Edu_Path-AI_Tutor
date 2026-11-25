@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="frontend/public/logo.png" width="200" />
+  <img src="frontend/public/logo.png" width="300" />
 </div>
 
 # EduPath AI Tutor: Topic-Aware RAG & Adaptive Agent
