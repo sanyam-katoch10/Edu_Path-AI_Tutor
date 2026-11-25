@@ -11,7 +11,9 @@
 - [Core Features](#-core-features)
 - [Project Structure](#-project-structure)
 - [Prerequisites & Installation](#-prerequisites--installation)
-- [Usage & Menu Options](#-usage--menu-options)
+- [Running the 3D Web Application](#-running-the-immersive-3d-web-application)
+- [Production Deployment Guide](#-production-deployment-guide)
+- [Usage & Menu Options (CLI)](#-usage--menu-options-standalone-cli)
 - [Evaluation & Benchmark Results](#-evaluation--benchmark-results)
 - [Attribution & Academic Integrity](#-attribution--academic-integrity)
 
@@ -113,12 +115,16 @@
 ## 📁 Project Structure
 
 ```text
-├── app.py                                # Main application: RAG pipeline, agent state, CLI & evaluation
-├── learning_content.txt                  # OpenStax-aligned Algebra 1 knowledge base (23 curated sections)
-├── requirements.txt                      # Python dependencies (ollama, numpy)
-├── tutor_quality_evaluation.md           # Raw generated responses & scoring sheets (15 test runs)
-├── tutor_quality_evaluation_reviewed_v2.md # Evaluated rubric benchmark (Score: 147/150 - 98.0%)
-└── README.md                             # Comprehensive project documentation
+├── app.py                   # Main tutoring engine: RAG pipeline, agent state, evaluation & CLI
+├── server.py                # FastAPI REST API backend (session state, streaming tutor, practice endpoints)
+├── learning_content.txt     # OpenStax-aligned Algebra 1 knowledge base (23 curated sections)
+├── requirements.txt         # Python backend dependencies (ollama, numpy, fastapi, uvicorn[standard])
+├── frontend/                # Production React 19 + TypeScript + Vite + Tailwind CSS v4 frontend
+│   ├── src/                 # Pages (Dashboard, Tutor, Practice, Progress, Library), Three.js & visualizers
+│   ├── public/              # 3D GLB assets, WebP cinematic backdrops, and favicons
+│   ├── dist/                # Production build output
+│   └── package.json         # Frontend dependencies and scripts
+└── README.md                # Project documentation & production deployment guide
 ```
 
 ---
@@ -139,7 +145,7 @@ ollama pull nomic-embed-text
 ### 3. Setup Virtual Environment
 ```bash
 # Clone or navigate to the project directory
-cd Edu_Path-AI_Tutor-main
+cd z
 
 # Create and activate virtual environment
 python -m venv .venv
@@ -158,9 +164,38 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Usage & Menu Options
+## 🌐 Running the Immersive 3D Web Application
 
-Run the main application:
+EduPath includes an immersive, 3D-first educational web experience with cinematic art direction, floating glassmorphic navigation, and real-time AI integration.
+
+### Step 1: Start the FastAPI Backend
+```bash
+# In your virtual environment:
+uvicorn server:app --reload --host 0.0.0.0 --port 8000
+```
+*The backend initializes document embeddings on startup and exposes 10 REST endpoints.*
+
+### Step 2: Start the React 19 Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Open **`http://localhost:5173`** in your browser.
+
+The 5 immersive experiences available:
+1. **Home (`/`)**: *The Emerald Observatory* — Art-directed landing experience featuring the 3D floating mathematical tome, interactive balance laboratory, connected 3-stage adaptive progression rail, asymmetric domain portals, and connected horizontal architecture pipeline.
+2. **AI Studio (`/tutor`)**: Socratic learning sanctum beside the responsive 3D Learning Orb (`idle`, `thinking`, `explaining`), KaTeX derivations, OpenStax citations, and immediate practice transitions.
+3. **Practice Arena (`/practice`)**: Focused mechanics laboratory with interactive balance beam scales, Cartesian coordinate slope grapher, progressive hints, and deterministic grading.
+4. **Learning Journey (`/progress`)**: Connected 11-stage 3D milestone constellation, accuracy orbit gauge, and diagnostic misconception logs.
+5. **Knowledge Library (`/library`)**: Scholarly digital archive of all 23 OpenStax sections across 6 hardbound curriculum volumes.
+
+
+---
+
+## 🚀 Usage & Menu Options (Standalone CLI)
+
+Run the standalone CLI application:
 ```bash
 python app.py
 ```
@@ -187,13 +222,11 @@ Upon launch, EduPath loads `learning_content.txt`, chunks the sections, computes
   - Complete a follow-up practice problem from the same topic.
   - Special commands: type `profile` to view learning stats, `skip` to bypass practice, or `exit` to return to menu.
 - **`3. Run deterministic pipeline evaluation`**: Executes automated verification for topic classification, vector retrieval Hit@3, regex answer checking, and adaptive leveling.
-- **`4. Run tutor quality evaluation`**: Generates 15 responses across 5 algebra topics and 3 levels, writing the output directly to `tutor_quality_evaluation.md`.
+- **`4. Run tutor quality evaluation`**: Generates 15 responses across 5 algebra topics and 3 levels.
 
 ---
 
 ## 📊 Evaluation & Benchmark Results
-
-As documented in [`tutor_quality_evaluation_reviewed_v2.md`](file:///c:/Users/sanya/OneDrive/Desktop/z/tutor_quality_evaluation_reviewed_v2.md):
 
 ### Generative Reviewer Rubric: **147 / 150 (98.0%)**
 - **Correctness**: 30 / 30 (All algebraic solutions verified mathematically).
