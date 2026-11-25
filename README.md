@@ -246,4 +246,3 @@ Upon launch, EduPath loads `learning_content.txt`, chunks the sections, computes
 
 - **Textbook Alignment**: Knowledge base materials are adapted from **OpenStax Algebra 1** (Rice University, authors: Lynn Marecek et al.).
 - **Permissions & Notes**: The knowledge content consists of paraphrased, module-tagged study summaries specifically designed for semantic RAG benchmarking.
-- **Course Context**: Developed for academic study and research in **CSE473: Large Language Models and Agentic AI**.
