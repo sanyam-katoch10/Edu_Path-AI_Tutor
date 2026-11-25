@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="static/logo.png" width="200" />
+</div>
+
 # EduPath AI Tutor: Topic-Aware RAG & Adaptive Agent
 
 > **An intelligent, local LLM-powered mathematics tutoring agent aligned with CSE473 (Large Language Models and Agentic AI).**  
