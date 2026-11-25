@@ -1,19 +1,7 @@
 import { useState, useCallback } from 'react';
 import { api } from '../api/client';
 import { useSession } from '../stores/sessionStore';
-import type { PracticeQuestion, CheckResult, Student } from '../lib/types';
-import fallbackPracticeData from '../data/fallbackPractice.json';
-
-interface FallbackQuestionItem {
-  id: string;
-  question: string;
-  answer: number | string | string[];
-  answer_type: 'numeric' | 'text';
-  hint: string;
-}
-
-type FallbackPracticeBank = Record<string, Record<string, FallbackQuestionItem[]>>;
-const fallbackBank = fallbackPracticeData as FallbackPracticeBank;
+import type { PracticeQuestion, CheckResult } from '../lib/types';
 
 export function usePractice() {
   const { sessionId, student, updateStudent } = useSession();
@@ -25,26 +13,20 @@ export function usePractice() {
   const [lastResult, setLastResult] = useState<CheckResult | null>(null);
   const [showHint, setShowHint] = useState<boolean>(false);
 
-  const getFallbackQuestion = useCallback((topic: string): PracticeQuestion => {
-    const userLevel = student?.level || 'Beginner';
-    const topicBank = fallbackBank[topic] || fallbackBank['linear_equations'];
-    const levelQuestions = topicBank[userLevel] || topicBank['Beginner'] || Object.values(topicBank)[0];
-    const item = levelQuestions[Math.floor(Math.random() * levelQuestions.length)];
-
-    return {
-      id: item.id,
-      question: item.question,
-      hint: item.hint,
-      answer_type: item.answer_type,
-      topic: topic,
-      level: userLevel,
-      answer: item.answer,
-    };
-  }, [student?.level]);
-
   const fetchPractice = useCallback(
     async (topic: string = selectedTopic) => {
-      const activeSession = sessionId || localStorage.getItem('edupath_session') || 'offline-guest';
+      let activeSession = sessionId || localStorage.getItem('edupath_session');
+      if (!activeSession) {
+        try {
+          const sRes = await api.createSession();
+          activeSession = sRes.session_id;
+          updateStudent(sRes.student);
+          localStorage.setItem('edupath_session', sRes.session_id);
+        } catch {
+          setError('No active session.');
+          return;
+        }
+      }
 
       setLoading(true);
       setError(null);
@@ -52,124 +34,26 @@ export function usePractice() {
       setShowHint(false);
 
       try {
-        if (activeSession.startsWith('offline-')) {
-          const fallbackQ = getFallbackQuestion(topic);
-          setCurrentPractice(fallbackQ);
-          setSelectedTopic(topic);
-          return;
-        }
-
         const res = await api.getPractice(topic, activeSession);
         setCurrentPractice(res.practice);
         setSelectedTopic(topic);
-      } catch {
-        // Graceful offline fallback
-        const fallbackQ = getFallbackQuestion(topic);
-        setCurrentPractice(fallbackQ);
-        setSelectedTopic(topic);
-        setError(null);
+      } catch (err: unknown) {
+        const msg = err instanceof Error ? err.message : 'Failed to fetch practice exercise';
+        setError(msg);
       } finally {
         setLoading(false);
       }
     },
-    [sessionId, selectedTopic, getFallbackQuestion]
+    [sessionId, selectedTopic, updateStudent]
   );
 
   const submitAnswer = useCallback(
     async (answer: string) => {
-      const activeSession = sessionId || localStorage.getItem('edupath_session') || 'offline-guest';
-      if (!currentPractice || !answer.trim()) return null;
+      const activeSession = sessionId || localStorage.getItem('edupath_session');
+      if (!activeSession || !currentPractice || !answer.trim()) return null;
 
       setChecking(true);
       setError(null);
-
-      // Check if we should evaluate offline
-      if (activeSession.startsWith('offline-') || currentPractice.answer !== undefined) {
-        let isCorrect = false;
-        const expected = currentPractice.answer;
-
-        if (currentPractice.answer_type === 'numeric') {
-          const numEntered = parseFloat(answer.trim());
-          const numExpected = typeof expected === 'number' ? expected : parseFloat(String(expected));
-          isCorrect = !isNaN(numEntered) && Math.abs(numEntered - numExpected) < 0.001;
-        } else {
-          const cleanEntered = answer.trim().toLowerCase().replace(/\s+/g, '');
-          if (Array.isArray(expected)) {
-            isCorrect = expected.some((ans) => String(ans).toLowerCase().replace(/\s+/g, '') === cleanEntered);
-          } else {
-            isCorrect = String(expected).toLowerCase().replace(/\s+/g, '') === cleanEntered;
-          }
-        }
-
-        const prevStudent = student || {
-          level: 'Beginner',
-          correct_answers: 0,
-          incorrect_answers: 0,
-          accuracy: 0,
-          consecutive_correct: 0,
-          consecutive_wrong: 0,
-          history: [],
-          observations: [],
-          support_needed: false,
-          practice_counts: {},
-          topics_covered: [],
-        };
-
-        const newCorrect = prevStudent.correct_answers + (isCorrect ? 1 : 0);
-        const newIncorrect = prevStudent.incorrect_answers + (isCorrect ? 0 : 1);
-        const total = newCorrect + newIncorrect;
-        const newAccuracy = total > 0 ? parseFloat((newCorrect / total).toFixed(2)) : 0;
-        const newConsecutiveCorrect = isCorrect ? prevStudent.consecutive_correct + 1 : 0;
-        const newConsecutiveWrong = isCorrect ? 0 : prevStudent.consecutive_wrong + 1;
-
-        let newLevel = prevStudent.level;
-        let levelChanged: string | null = null;
-        if (newConsecutiveCorrect >= 3 && prevStudent.level === 'Beginner') {
-          newLevel = 'Intermediate';
-          levelChanged = 'Advanced to Intermediate';
-        } else if (newConsecutiveCorrect >= 5 && prevStudent.level === 'Intermediate') {
-          newLevel = 'Advanced';
-          levelChanged = 'Advanced to Advanced';
-        }
-
-        const updatedStudent: Student = {
-          ...prevStudent,
-          level: newLevel,
-          correct_answers: newCorrect,
-          incorrect_answers: newIncorrect,
-          accuracy: newAccuracy,
-          consecutive_correct: newConsecutiveCorrect,
-          consecutive_wrong: newConsecutiveWrong,
-          topics_covered: Array.from(new Set([...prevStudent.topics_covered, currentPractice.topic])),
-          history: [
-            {
-              question: currentPractice.question,
-              answer: answer.trim(),
-              correct: isCorrect,
-              level: currentPractice.level,
-              topic: currentPractice.topic,
-            },
-            ...prevStudent.history,
-          ],
-        };
-
-        updateStudent(updatedStudent);
-
-        const checkRes: CheckResult = {
-          result: isCorrect ? 'correct' : 'incorrect',
-          correct: isCorrect,
-          expected: currentPractice.answer ?? 'Verified',
-          student: updatedStudent,
-          level_changed: levelChanged,
-          message: isCorrect
-            ? 'Correct! Inverse operations applied with mathematical precision.'
-            : `Not quite. Expected ${Array.isArray(expected) ? expected[0] : expected}. Check the arithmetic steps.`,
-        };
-
-        setLastResult(checkRes);
-        setChecking(false);
-        return checkRes;
-      }
 
       try {
         const res = await api.checkAnswer(
@@ -182,24 +66,15 @@ export function usePractice() {
           updateStudent(res.student);
         }
         return res;
-      } catch {
-        // Fallback check
-        const isCorrect = answer.trim() === '4' || answer.trim() === '3';
-        const fallbackRes: CheckResult = {
-          result: isCorrect ? 'correct' : 'incorrect',
-          correct: isCorrect,
-          expected: '4',
-          student: student!,
-          level_changed: null,
-          message: isCorrect ? 'Correct!' : 'Incorrect. Check your steps.',
-        };
-        setLastResult(fallbackRes);
-        return fallbackRes;
+      } catch (err: unknown) {
+        const msg = err instanceof Error ? err.message : 'Failed to check answer';
+        setError(msg);
+        return null;
       } finally {
         setChecking(false);
       }
     },
-    [sessionId, currentPractice, student, updateStudent]
+    [sessionId, currentPractice, updateStudent]
   );
 
   const nextQuestion = useCallback(() => {
@@ -224,6 +99,7 @@ export function usePractice() {
     submitAnswer,
     nextQuestion,
     clearResult,
+    student,
     studentLevel: student?.level || 'Beginner',
   };
 }
