@@ -126,12 +126,14 @@
 ├── server.py                # FastAPI REST API backend (session state, streaming tutor, practice endpoints)
 ├── learning_content.txt     # OpenStax-aligned Algebra 1 knowledge base (23 curated sections)
 ├── requirements.txt         # Python backend dependencies (ollama, numpy, fastapi, uvicorn[standard])
-├── frontend/                # Production React 19 + TypeScript + Vite + Tailwind CSS v4 frontend
-│   ├── src/                 # Pages (Dashboard, Tutor, Practice, Progress, Library), Three.js & visualizers
-│   ├── public/              # 3D GLB assets, WebP cinematic backdrops, and favicons
-│   ├── dist/                # Production build output
-│   └── package.json         # Frontend dependencies and scripts
-└── README.md                # Project documentation & production deployment guide
+├── netlify.toml             # Netlify deployment configuration & SPA routing rules
+├── README.md                # Project documentation & setup guide
+└── frontend/                # Production React 19 + TypeScript + Vite + Tailwind CSS v4 frontend
+    ├── index.html           # HTML entry point with typography & meta headers
+    ├── package.json         # Frontend dependencies and build scripts
+    ├── vite.config.ts       # Vite bundler configuration & chunk splitting
+    ├── public/              # 3D GLB assets, WebP cinematic backdrops, and favicons
+    └── src/                 # Pages (Dashboard, Tutor, Practice, Progress, Library), Three.js & visualizers
 ```
 
 ---
