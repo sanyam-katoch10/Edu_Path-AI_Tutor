@@ -22,6 +22,10 @@
 
 ---
 
+> [!NOTE]
+> Download full prerequisites and run on your local system for full LLM functionality. The given website is just a web display using a fallback and does not have LLM support.
+
+---
 ## 📖 Project Overview
 
 **EduPath** is a fully local, privacy-first Agentic AI tutoring system designed to assist students in mastering foundational and intermediate algebra. Rather than acting as a simple chatbot, EduPath operates as a stateful, goal-directed agent that:
