@@ -153,16 +153,20 @@ ollama pull nomic-embed-text
 
 ### 3. Setup Virtual Environment
 ```bash
-# Clone or navigate to the project directory
-cd Edu_Path-AI_Tutor-main
+# 1. Clone the repository and navigate into it
+git clone https://github.com/<your-username>/Edu_Path-AI_Tutor.git
+cd Edu_Path-AI_Tutor
 
-# Create and activate virtual environment
+# (Note: If downloaded as a ZIP from GitHub, the folder name will be):
+# cd Edu_Path-AI_Tutor-main
+
+# 2. Create virtual environment
 python -m venv .venv
 
-# On Windows (PowerShell):
+# 3. Activate on Windows (PowerShell):
 .\.venv\Scripts\Activate.ps1
 
-# On macOS/Linux:
+# Activate on macOS/Linux:
 source .venv/bin/activate
 ```
 
