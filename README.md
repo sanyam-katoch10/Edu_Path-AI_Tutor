@@ -154,7 +154,7 @@ ollama pull nomic-embed-text
 ### 3. Setup Virtual Environment
 ```bash
 # 1. Clone the repository and navigate into it
-git clone https://github.com/<your-username>/Edu_Path-AI_Tutor.git
+git clone https://github.com/sanyam-katoch10/Edu_Path-AI_Tutor.git
 cd Edu_Path-AI_Tutor
 
 # (Note: If downloaded as a ZIP from GitHub, the folder name will be):
